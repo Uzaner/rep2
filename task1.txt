@@ -1,0 +1,14 @@
+class StringVar:
+    def __init__(self):
+        self.value = None
+
+    def set(self, value):
+        self.value = value
+
+    def get(self):
+        return self.value
+
+
+stringVar = StringVar()
+stringVar.set("hello world")
+print(stringVar.get())

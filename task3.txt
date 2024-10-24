@@ -1,0 +1,24 @@
+import random
+
+
+class Warrior:
+    def __init__(self, name):
+        self.hp = 100
+        self.name = name
+
+    def hit_enemy(self, enemy):
+        enemy.hp = max(enemy.hp - 20, 0)
+        print(f"{self.name} атаковал! У {enemy.name} осталось {enemy.hp} здоровья!")
+        if enemy.hp == 0:
+            print(f"{enemy.name} пал! Победа за {self.name}")
+
+
+warrior1 = Warrior("Воин 1")
+warrior2 = Warrior("Воин 2")
+
+while warrior1.hp * warrior2.hp != 0:
+    turn = random.randint(1,2)
+    if turn == 1:
+        warrior1.hit_enemy(warrior2)
+    elif turn == 2:
+        warrior2.hit_enemy(warrior1)
